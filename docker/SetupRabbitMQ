@@ -1,0 +1,9 @@
+Setup Rabbit MQ Cluster On Docker
+
+sudo docker run -d -p 5672:5672 -p 80:15672 --hostname BkrRabbitApp1 --name BkrRabbitApp1 -e RABBITMQ_DEFAULT_USER=rabitadm -e RABBITMQ_DEFAULT_PASS=passadm -e RABBITMQ_ERLANG_COOKIE='BkrApp'  rabbitmq:latest
+
+
+sudo docker run -d -p 5672:5672 -p 15672:15672 --hostname BkrRabbitApp1 --name BkrRabbitApp1 -e RABBITMQ_DEFAULT_USER=rabitadm -e RABBITMQ_DEFAULT_PASS=passadm -e RABBITMQ_ERLANG_COOKIE='BkrApp'  rabbitmq:management
+
+sudo docker stop BkrRabbitApp1
+sudo docker rm BkrRabbitApp1
