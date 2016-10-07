@@ -1,0 +1,36 @@
+
+Setup Rabbit MQ Cluster On Centos 7 Host
+
+sudo yum install erlang
+
+sudo rpm --import https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
+
+sudo wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.5/rabbitmq-server-3.6.5-1.noarch.rpm
+
+sudo yum install rabbitmq-server-3.6.5-1.noarch.rpm
+
+sudo chkconfig rabbitmq-server on
+
+sudo rabbitmqctl stop
+rabbitmqctl status
+
+ulimit -S -n 65536 
+
+vim /etc/security/limits.conf
+
+*              soft     nofile          65536
+*              hard     nofile          65536
+
+
+ulimit -S -n 4096
+
+
+ulimit -a
+
+sudo rabbitmqctl add_vhost 
+
+
+
+
+
+
